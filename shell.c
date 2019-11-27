@@ -58,7 +58,7 @@ int main(void)
 		arv = splitstring(buff, " \n");
 		if (!arv || !arv[0])
 			execute(arv);
-		else
+/*		else
 		{
 			value = _getenv("PATH");
 			head = linkpath(value);
@@ -79,7 +79,7 @@ int main(void)
 			}
 		}
 	}
-	free_list(head);
+	free_list(head);*/
 	freearv(arv);
 	free(buff);
 	return (EXIT_SUCCESS);
