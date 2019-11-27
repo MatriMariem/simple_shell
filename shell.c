@@ -52,9 +52,8 @@ int main(void)
 	signal(SIGINT, sig_handler);
 	while (len != EOF)
 	{
-/*		_isatty();*/
+		_isatty();
 		len = getline(&buff, &size, stdin);
-_isatty();
 		_EOF(len, buff);
 		arv = splitstring(buff, " \n");
 		if (!arv || !arv[0])
