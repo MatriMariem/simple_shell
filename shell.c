@@ -82,5 +82,5 @@ int main(void)
 	free_list(head);
 	freearv(arv);
 	free(buff);
-	return (EXIT_SUCCESS);
+	return (0);
 }
