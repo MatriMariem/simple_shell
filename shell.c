@@ -43,7 +43,7 @@ void _isatty(void)
 
 int main(void)
 {
-	ssize_t len;
+	ssize_t len = 0;
 	char *buff = NULL, *value, *pathname, **arv;
 	size_t size = 0;
 	list_path *head = '\0';
