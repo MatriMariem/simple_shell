@@ -52,13 +52,14 @@ int main(void)
 	signal(SIGINT, sig_handler);
 	while (len != EOF)
 	{
-		_isatty();
+/*		_isatty();*/
 		len = getline(&buff, &size, stdin);
+_isatty();
 		_EOF(len, buff);
 		arv = splitstring(buff, " \n");
 		if (!arv || !arv[0])
 			execute(arv);
-/*		else
+		else
 		{
 			value = _getenv("PATH");
 			head = linkpath(value);
@@ -79,7 +80,7 @@ int main(void)
 			}
 		}
 	}
-	free_list(head);*/
+	free_list(head);
 	freearv(arv);
 	free(buff);
 	return (EXIT_SUCCESS);
