@@ -21,12 +21,21 @@ void _EOF(int len, char *buff)
 {
 	if (len == -1)
 	{
-		_puts("\n");
+		if (isatty(STDIN_FILENO))
+			_puts("\n");
 		free(buff);
 		exit(10);
 	}
 }
+/**
+  * _isatty - verif if terminal
+  */
 
+void _isatty(void)
+{
+	if (isatty(STDIN_FILENO))
+		_puts("#cisfun$ ");
+}
 /**
  * main - Shell
  * Return: 0 on success
@@ -41,9 +50,9 @@ int main(void)
 	void (*f)(char **);
 
 	signal(SIGINT, sig_handler);
-	while (len >= 0)
+	while (len != EOF)
 	{
-		_puts("#cisfun$ ");
+		_isatty();
 		len = getline(&buff, &size, stdin);
 		_EOF(len, buff);
 		arv = splitstring(buff, " \n");
