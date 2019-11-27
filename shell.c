@@ -62,7 +62,7 @@ int main(void)
 			}
 			else if (!pathname)
 				execute(arv);
-			else
+			else if (pathname)
 			{
 				free(arv[0]);
 				arv[0] = pathname;

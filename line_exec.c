@@ -55,7 +55,7 @@ char **splitstring(char *str, const char *delim)
 void execute(char **argv)
 {
 
-	int d, status, error;
+	int d, status;
 
 	if (!argv || !argv[0])
 		return;
@@ -67,9 +67,9 @@ void execute(char **argv)
 	}
 	if (d == 0)
 	{
-		error = execve(argv[0], argv, environ);
-		if (error == -1)
-			perror(_getenv("_"));
+		execve(argv[0], argv, environ);
+			_puts(argv[0]);
+			_puts(" : command not found\n");
 		exit(1);
 	}
 	wait(&status);
