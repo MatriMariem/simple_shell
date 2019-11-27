@@ -24,7 +24,7 @@ void _EOF(int len, char *buff)
 		if (isatty(STDIN_FILENO))
 			_puts("\n");
 		free(buff);
-		exit(1);
+		exit(0);
 	}
 }
 /**
