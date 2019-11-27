@@ -13,7 +13,7 @@ char *_strdup(char *str)
 
 	if (str == '\0')
 	{
-		return (0);
+		return (NULL);
 	}
 	for (l = 0; str[l] != '\0';)
 	{
@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	new = malloc(sizeof(char) * l + 1);
 	if (new == '\0')
 	{
-		return (0);
+		return (NULL);
 	}
 	for (i = 0; i < l; i++)
 	{
@@ -50,7 +50,7 @@ char *concat_all(char *name, char *sep, char *value)
 
 	result = malloc(l1 + l2 + l3 + 1);
 	if (!result)
-		return (0);
+		return (NULL);
 
 	for (i = 0; name[i]; i++)
 		result[i] = name[i];

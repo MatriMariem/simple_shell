@@ -12,7 +12,7 @@ char *_getenv(const char *name)
 	char *value;
 
 	if (!name)
-		return (0);
+		return (NULL);
 	for (i = 0; environ[i]; i++)
 	{
 		j = 0;
@@ -53,7 +53,7 @@ list_path *add_node_end(list_path **head, char *str)
 
 	if (new == '\0' || str == '\0')
 	{
-		return (0);
+		return (NULL);
 	}
 
 	new->dir = str;

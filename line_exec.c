@@ -63,14 +63,14 @@ void execute(char **argv)
 	if (d == -1)
 	{
 		perror(_getenv("_"));
-		exit(1);
+		exit(126);
 	}
 	if (d == 0)
 	{
 		execve(argv[0], argv, environ);
 			_puts(argv[0]);
 			_puts(" : command not found\n");
-		exit(1);
+		exit(127);
 	}
 	wait(&status);
 }

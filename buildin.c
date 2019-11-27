@@ -11,8 +11,12 @@ void exitt(char **arv)
 	if (arv[1])
 	{
 		n = _atoi(arv[1]);
+		if (n >= 0 && n < 255)
+		{
 		freearv(arv);
-		exit(n);
+		exit(0);
+		}
+		exit(128);
 	}
 
 	else
