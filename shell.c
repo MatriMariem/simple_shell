@@ -21,7 +21,7 @@ void _EOF(int len, char *buff)
 {
 	if (len == -1)
 	{
-		if (isatty(STDIN_FILENO))
+/*		if (isatty(STDIN_FILENO))*/
 			_puts("\n");
 		free(buff);
 		exit(1);
