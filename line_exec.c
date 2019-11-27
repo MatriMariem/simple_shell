@@ -67,7 +67,7 @@ void execute(char **argv)
 	}
 	if (d == 0)
 	{
-		error = execve(argv[0], argv, NULL);
+		error = execve(argv[0], argv, environ);
 		if (error == -1)
 			perror(_getenv("_"));
 		exit(1);
