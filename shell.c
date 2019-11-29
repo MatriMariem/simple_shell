@@ -19,11 +19,14 @@ void sig_handler(int sig_num)
  */
 void _EOF(int len, char *buff)
 {
+	(void)buff;
 	if (len == -1)
 	{
 		if (isatty(STDIN_FILENO))
+		{
 			_puts("\n");
-		free(buff);
+			free(buff);
+		}
 		exit(0);
 	}
 }
