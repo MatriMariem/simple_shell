@@ -51,7 +51,7 @@ list_path *add_node_end(list_path **head, char *str)
 
 	new = malloc(sizeof(list_path));
 
-	if (new == '\0' || str == '\0')
+	if (!new || !str)
 	{
 		return (NULL);
 	}
@@ -59,7 +59,7 @@ list_path *add_node_end(list_path **head, char *str)
 	new->dir = str;
 
 	new->p = '\0';
-	if (*head == '\0')
+	if (!*head)
 	{
 		*head = new;
 	}
